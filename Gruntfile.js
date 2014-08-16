@@ -50,7 +50,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '.jekyll/**/*.html',
+          'jekyll/**/*.html',
           '.tmp/css/**/*.css',
           '{.tmp,<%= yeoman.app %>}/<%= js %>/**/*.js',
           '<%= yeoman.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
           open: true,
           base: [
             '.tmp',
-            '.jekyll',
+            'jekyll',
             '<%= yeoman.app %>'
           ]
         }
@@ -86,7 +86,7 @@ module.exports = function (grunt) {
         options: {
           base: [
             '.tmp',
-            '.jekyll',
+            'jekyll',
             'test',
             '<%= yeoman.app %>'
           ]
@@ -108,7 +108,7 @@ module.exports = function (grunt) {
       },
       server: [
         '.tmp',
-        '.jekyll'
+        'jekyll'
       ]
     },
     sass: {
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
       server: {
         options: {
           config: '_config.yml',
-          dest: '.jekyll'
+          dest: 'jekyll'
         }
       },
       check: {
