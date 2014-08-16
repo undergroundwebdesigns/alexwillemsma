@@ -1,7 +1,5 @@
-# -*- mode: ruby -*-
-# # vi: set ft=ruby :
-# source 'https://rubygems.org'
+source "http://rubygems.org"
 
-gem 'jekyll'
-gem 'jekyll-import'
-gem 'compass'
+gem 'jekyll', '~>1.4.0'
+gem 'redcarpet'
+gem 'sass', '>=3.2'
