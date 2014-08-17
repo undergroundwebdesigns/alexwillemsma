@@ -1,35 +1,24 @@
 !!!
 %html
   %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title {{ page.title }}
-    %meta{:content => "width=device-width", :name => "viewport"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     / build:css({app,.tmp}) /css/main.css
     / Syntax highlighting CSS
-    %link{:href => "/css/syntax.css", :rel => "stylesheet"}/
+    %link{href: "/css/syntax.css", rel: "stylesheet"}/
     / Custom CSS
-    %link{:href => "/css/main.css", :rel => "stylesheet"}/
+    %link{href: "/css/main.css", rel: "stylesheet"}/
+    %link{rel: "icon", href: "/img/favicon.ico"}
     / endbuild
-  %body
-    .site
-      .header
-        %h1.title
-          %a{:href => "/"} {{ site.name }}
-        %a.extra{:href => "/"} home
+  %body{"data-spy" => "scroll", "data-target" => ".navbar-collapse"}
+    {% haml header.haml %}
+    .container.content
       {{ content }}
-      .footer
-        .contact
-          %p
-            Alex Willemsma
-            %br/
-            %a{:href => "mailto:alex@alexwillemsma.com"} alex@alexwillemsma.com
-        .contact
-          %p
-            %a{:href => "https://github.com/yourusername"} github.com/yourusername
-            %br/
-            %a{:href => "https://twitter.com/yourusername"} twitter.com/yourusername
-            %br/
+    {% haml footer.haml %}
     / build:js({app,.tmp}) /js/scripts.js
-    %script{:src => "/js/main.js"}
+    %script{src: "/js/jquery.js"}
+    %script{src: "/js/bootstrap.js"}
+    %script{src: "/js/main.js"}
     / endbuild

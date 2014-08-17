@@ -182,6 +182,26 @@ module.exports = function (grunt) {
         }]
       }
     },
+    bower: {
+      server: {
+        dest: '.tmp',
+        css_dest: '.tmp/css',
+        js_dest: '.tmp/js',
+        eot_dest: '.tmp/fonts',
+        svg_dest: '.tmp/fonts',
+        ttf_dest: '.tmp/fonts',
+        woff_dest: '.tmp/fonts'
+      },
+      dist: {
+        dest: '<%= yeoman.dist %>',
+        css_dest: '<%= yeoman.dist %>/css',
+        js_dest: '<%= yeoman.dist %>/js',
+        eot_dest: '<%= yeoman.dist %>/fonts',
+        svg_dest: '<%= yeoman.dist %>/fonts',
+        ttf_dest: '<%= yeoman.dist %>/fonts',
+        woff_dest: '<%= yeoman.dist %>/fonts'
+      }
+    },
     jekyll: {
       options: {
         bundleExec: true,
@@ -352,11 +372,13 @@ module.exports = function (grunt) {
         'sass:server',
         'coffee:dist',
         'copy:stageCss',
+        'bower:server',
         'jekyll:server'
       ],
       dist: [
         'sass:dist',
         'coffee:dist',
+        'bower:dist',
         'copy:dist'
       ]
     }
