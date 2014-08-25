@@ -381,6 +381,14 @@ module.exports = function (grunt) {
         'bower:dist',
         'copy:dist'
       ]
+    },
+    shell: {
+      s3publish: {
+        options: {
+          stdout: true
+        },
+        command: './s3_publish.sh'
+      }
     }
   });
 
@@ -442,5 +450,12 @@ module.exports = function (grunt) {
     'check',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'check',
+    'test',
+    'build',
+    'shell:s3publish'
   ]);
 };
